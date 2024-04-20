@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> FudBud</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="styles.css">
+
+<style>
+  * {box-sizing: border-box}
+  body {font-family: Verdana, sans-serif; margin:0}
+  
+  img {vertical-align: middle;}
+  
+  .slideshow-container {
+    max-width: 2000px;
+    position: relative;
+    margin: auto;
+  
+  }
+  .mySlides{
+    display: none;
+  }
+  
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+  
+
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
+  
+  .dot {
+    cursor: pointer;
+    height: 10px;
+    width: 10px;
+    margin: 0 2px;
+    background-color: #717171;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    
+  }
+
+  
+  .active, .dot:hover {
+    background-color:  #bbb;
+  }
+  
+  
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+  
+  </style>
+</head>
+
+
+<body>
+
+<div class="nav" >
+  <a class="a" href="./index.html"><strong>FudBud</strong></a>
+  <a class="split" href="./about.html" >About</a>
+</div>
+
+<hr>
+
+  <div class="slideshow-container">
+  
+  <div class="mySlides fade">
+    <img src="./1.png" style="width:100%">
+  </div>
+  
+  <div class="mySlides fade">
+    <img src="2.png" style="width:100%">
+  </div>
+  
+  <div class="mySlides fade">
+    <img src="3.png" style="width:100%">
+  </div>
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span> 
+    <span class="dot" onclick="currentSlide(2)"></span> 
+    <span class="dot" onclick="currentSlide(3)"></span> 
+  </div>
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+  
+  
+
+  </div>
+  <br>
+  <div class="mainheading">
+    <h2>Recipe Search</h2>
+  </br>
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="Enter ingredients...">
+      
+      <button onclick="searchRecipes()">Search</button>   
+      
+    </div>
+  </div>
+ 
+
+  <div id="recipesList"></div>
+</br>
+</br></br></br></br>
+  <div class="mainheading">
+    <h2>Check out popular recipes</h2>
+  </div>
+
+  <div class="grid-container">
+    <div class="grid-item">
+      <div id="Spaghetti"><a href="https://www.kitchensanctuary.com/spaghetti-bolognese/"> <img class="image" src="./Spagetti.jpg"> </a></div>
+      <div class="overlay"><a href="https://www.kitchensanctuary.com/spaghetti-bolognese/">
+        <h2>Spaghetti ~ 30mins</h2>
+        <p>Made by Nicky Corbishley</p></a>
+      </div>
+    </div>
+    <div class="grid-item">
+      <div id="Chicken"><a href="https://natashaskitchen.com/chicken-stir-fry-recipe/"> <img class="image" src="./chicken.jpg"> </a></div>
+      <div class="overlay"><a href="https://natashaskitchen.com/chicken-stir-fry-recipe/">
+        <h2>Chicken Stir-Fry ~ 30mins</h2>
+        <p>Made by Natasha Kravchuk</p></a>
+      </div>
+    </div>
+    <div class="grid-item">
+      <div id="Vegetable Soup"><a href="https://thecozyapron.com/vegetable-soup/"> <img class="image" src="./Soup.jpg"> </a></div>
+      <div class="overlay"><a href="https://thecozyapron.com/vegetable-soup/">
+        <h2>Vegetable Soup ~ 20mins</h2>
+        <p>Made by Ingrid Beer</p></a>
+      </div>
+    </div>
+    <div class="grid-item">
+      <div id="Pizza" ><a href="https://www.loveandlemons.com/homemade-pizza/"> <img class="image" src="./pizza.jpg"> </a></div>
+      <div class="overlay"><a href="https://www.loveandlemons.com/homemade-pizza/">
+        <h2>Homemade Pizza ~ 45mins</h2>
+        <p>Made by Jeanine and Jack</p></a>
+      </div>
+    </div>
+    <div class="grid-item">
+      <div><a href="https://feelgoodfoodie.net/recipe/ground-beef-tacos-napa-cabbage-guacamole/"> <img class="image" src="./beef taco.jpg"> </a></div>
+      <div class="overlay"><a href="https://feelgoodfoodie.net/recipe/ground-beef-tacos-napa-cabbage-guacamole/">
+        <h2>Beef Taco ~ 25mins</h2>
+        <p>Made by Martha Stewart</p></a>
+      </div>
+    </div>
+    <div class="grid-item">
+      <div id=" Smoothie"><a href="https://thehealthfulideas.com/passion-fruit-smoothie/"> <img class="image" src="./smoothie.jpg"> </a></div>
+      <div class="overlay"><a href="https://thehealthfulideas.com/passion-fruit-smoothie/">
+        <h2>Fruit Smoothie ~ 20mins</h2>
+        <p>Made by Veronika Sykoroval</p></a>
+      </div>
+    </div>
+    <div class="grid-item">
+      <div id="Risotto"><a href="https://www.allrecipes.com/recipe/85389/gourmet-mushroom-risotto/"> <img class="image" src="./risotto.jpg"> </a></div>
+      <div class="overlay"><a href="https://www.allrecipes.com/recipe/85389/gourmet-mushroom-risotto/">
+        <h2> Mushroom Risotto ~ 45mins</h2>
+        <p>Made by Myleen S. </p></a>
+      </div>
+    </div>
+    <div class="grid-item">
+      <div id="Chili"><a href="https://rainbowplantlife.com/vegan-chili/"> <img class="image" src="./chili.jpeg"> </a></div>
+      <div class="overlay"><a href="https://rainbowplantlife.com/vegan-chili/">
+        <h2>Vegetarian Chili ~ 2 hrs</h2>
+        <p>Made by Nisha Vora</p></a>
+      </div>
+    </div>
+  
+  <script src="main.js"></script>
+
+  
+
+
+<div class="footer">
+  <p>&copy; 2024  All Rights Reserved </p>
+</div>
+</body>
+</html>
